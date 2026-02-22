@@ -5,48 +5,93 @@ const deletebtn1 = document.getElementById("delete-btn-1")
 
 const statusbtn2 = document.getElementById("stetus-2")
 const interViewBtn2 = document.getElementById("interview-stetus-btn-2")
-const rejectedbtn2 = document.getElementById("rejected-stetus-btn-2")
+const rejectedbtn2 = 
+document.getElementById("rejected-stetus-btn-2")
 const deletebtn2 = document.getElementById("delete-btn-2")
 
 const statusbtn3 = document.getElementById("stetus-3")
+
+
+
 const interViewBtn3 = document.getElementById("interview-stetus-btn-3")
-const rejectedbtn3 = document.getElementById("rejected-stetus-btn-3")
+const rejectedbtn3 = document.getElementById
+("rejected-stetus-btn-3")
 const deletebtn3 = document.getElementById("delete-btn-3")
 
+
+
 const statusbtn4 = document.getElementById("stetus-4")
+
+
 const interViewBtn4 = document.getElementById("interview-stetus-btn-4")
 const rejectedbtn4 = document.getElementById("rejected-stetus-btn-4")
 const deletebtn4 = document.getElementById("delete-btn-4")
 
+
+
 const statusbtn5 = document.getElementById("stetus-5")
+
+
+
 const interViewBtn5 = document.getElementById("interview-stetus-btn-5")
 const rejectedbtn5 = document.getElementById("rejected-stetus-btn-5")
 const deletebtn5 = document.getElementById("delete-btn-5")
 
+
+
 const statusbtn6 = document.getElementById("stetus-6")
+
+
 const interViewBtn6 = document.getElementById("interview-stetus-btn-6")
 const rejectedbtn6 = document.getElementById("rejected-stetus-btn-6")
 const deletebtn6 = document.getElementById("delete-btn-6")
 
+
+
 const statusbtn7 = document.getElementById("stetus-7")
+
+
 const interViewBtn7 = document.getElementById("interview-stetus-btn-7")
 const rejectedbtn7 = document.getElementById("rejected-stetus-btn-7")
 const deletebtn7 = document.getElementById("delete-btn-7")
 
+
+
 const statusbtn8 = document.getElementById("stetus-8")
+
+
 const interViewBtn8 = document.getElementById("interview-stetus-btn-8")
 const rejectedbtn8 = document.getElementById("rejected-stetus-btn-8")
 const deletebtn8 = document.getElementById("delete-btn-8")
 
+
+
 const allBtn = document.getElementById("all-btn")
+
+
 const interviewPageBtn = document.getElementById("interview-page-btn")
 const rejectedPageBtn = document.getElementById("rejected-page-btn")
 const noJobSection = document.getElementById("no-job-abailable")
 const interviewCountBtn = document.getElementById("interview-count-btn")
 const rejectedCountBtn = document.getElementById("rejected-count-btn")
 const totalCountBtn = document.getElementById("Total-count-btn")
+const jobsCount = document.getElementById("jobs-count")
 
-// save deleted cards here so we can restore them
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let deletedCard1 = null
 let deletedCard2 = null
 let deletedCard3 = null
@@ -60,21 +105,51 @@ let currentFilter = "all"
 
 function updateCounts() {
   const allCards = document.querySelectorAll(".job-card")
+
+
+
+
+
+
+
+
+
   let interviewTotal = 0
   let rejectedTotal = 0
+  let visibleTotal = 0
   for (let i = 0; i < allCards.length; i++) {
-    if (allCards[i].dataset.status === "interview") interviewTotal++
-    if (allCards[i].dataset.status === "rejected") rejectedTotal++
+    if (allCards[i].dataset.deleted !== "true") {
+      visibleTotal++
+      if (allCards[i].dataset.status === "interview") interviewTotal++
+      if (allCards[i].dataset.status === "rejected") rejectedTotal++
+    }
   }
+
+
+
   interviewCountBtn.innerText = interviewTotal
   rejectedCountBtn.innerText = rejectedTotal
-  totalCountBtn.innerText = allCards.length
+  totalCountBtn.innerText = visibleTotal
 }
+
+
+
+
+
 
 function applyFilter() {
   const allCards = document.querySelectorAll(".job-card")
   let visibleCount = 0
+  let totalVisible = 0
+
   for (let i = 0; i < allCards.length; i++) {
+    if (allCards[i].dataset.deleted === "true") {
+      allCards[i].style.display = "none"
+      continue
+    }
+
+    totalVisible++
+
     if (currentFilter === "all" || allCards[i].dataset.status === currentFilter) {
       allCards[i].style.display = "block"
       visibleCount++
@@ -82,6 +157,15 @@ function applyFilter() {
       allCards[i].style.display = "none"
     }
   }
+
+  if (currentFilter === "all") {
+    jobsCount.innerText = totalVisible + " of " + totalVisible + " jobs"
+  } else if (currentFilter === "interview") {
+    jobsCount.innerText = visibleCount + " interviews of " + totalVisible + " jobs"
+  } else if (currentFilter === "rejected") {
+    jobsCount.innerText = visibleCount + " rejected of " + totalVisible + " jobs"
+  }
+
   if (visibleCount === 0) {
     noJobSection.classList.remove("hidden")
   } else {
@@ -133,7 +217,7 @@ rejectedbtn1.addEventListener("click", function(){
 deletebtn1.addEventListener("click", function(){
   const card = document.querySelector('[data-id="1"]')
   deletedCard1 = card
-  card.style.display = "none"
+  card.dataset.deleted = "true"
   updateCounts()
   applyFilter()
 })
@@ -158,7 +242,7 @@ rejectedbtn2.addEventListener("click", function(){
 deletebtn2.addEventListener("click", function(){
   const card = document.querySelector('[data-id="2"]')
   deletedCard2 = card
-  card.style.display = "none"
+  card.dataset.deleted = "true"
   updateCounts()
   applyFilter()
 })
@@ -183,7 +267,7 @@ rejectedbtn3.addEventListener("click", function(){
 deletebtn3.addEventListener("click", function(){
   const card = document.querySelector('[data-id="3"]')
   deletedCard3 = card
-  card.style.display = "none"
+  card.dataset.deleted = "true"
   updateCounts()
   applyFilter()
 })
@@ -208,7 +292,7 @@ rejectedbtn4.addEventListener("click", function(){
 deletebtn4.addEventListener("click", function(){
   const card = document.querySelector('[data-id="4"]')
   deletedCard4 = card
-  card.style.display = "none"
+  card.dataset.deleted = "true"
   updateCounts()
   applyFilter()
 })
@@ -233,7 +317,7 @@ rejectedbtn5.addEventListener("click", function(){
 deletebtn5.addEventListener("click", function(){
   const card = document.querySelector('[data-id="5"]')
   deletedCard5 = card
-  card.style.display = "none"
+  card.dataset.deleted = "true"
   updateCounts()
   applyFilter()
 })
@@ -258,7 +342,7 @@ rejectedbtn6.addEventListener("click", function(){
 deletebtn6.addEventListener("click", function(){
   const card = document.querySelector('[data-id="6"]')
   deletedCard6 = card
-  card.style.display = "none"
+  card.dataset.deleted = "true"
   updateCounts()
   applyFilter()
 })
@@ -283,7 +367,7 @@ rejectedbtn7.addEventListener("click", function(){
 deletebtn7.addEventListener("click", function(){
   const card = document.querySelector('[data-id="7"]')
   deletedCard7 = card
-  card.style.display = "none"
+  card.dataset.deleted = "true"
   updateCounts()
   applyFilter()
 })
@@ -308,7 +392,7 @@ rejectedbtn8.addEventListener("click", function(){
 deletebtn8.addEventListener("click", function(){
   const card = document.querySelector('[data-id="8"]')
   deletedCard8 = card
-  card.style.display = "none"
+  card.dataset.deleted = "true"
   updateCounts()
   applyFilter()
 })
@@ -317,7 +401,6 @@ updateCounts()
 applyFilter()
 allBtn.classList.add("btn-active")
 
-// Delete All
 document.getElementById("delete-all-btn").addEventListener("click", function() {
   const card1 = document.querySelector('[data-id="1"]')
   const card2 = document.querySelector('[data-id="2"]')
@@ -337,14 +420,14 @@ document.getElementById("delete-all-btn").addEventListener("click", function() {
   deletedCard7 = card7
   deletedCard8 = card8
 
-  card1.style.display = "none"
-  card2.style.display = "none"
-  card3.style.display = "none"
-  card4.style.display = "none"
-  card5.style.display = "none"
-  card6.style.display = "none"
-  card7.style.display = "none"
-  card8.style.display = "none"
+  card1.dataset.deleted = "true"
+  card2.dataset.deleted = "true"
+  card3.dataset.deleted = "true"
+  card4.dataset.deleted = "true"
+  card5.dataset.deleted = "true"
+  card6.dataset.deleted = "true"
+  card7.dataset.deleted = "true"
+  card8.dataset.deleted = "true"
 
   updateCounts()
   applyFilter()
@@ -352,14 +435,14 @@ document.getElementById("delete-all-btn").addEventListener("click", function() {
 
 
 document.getElementById("restore-all-btn").addEventListener("click", function() {
-  if (deletedCard1) { deletedCard1.style.display = "block" }
-  if (deletedCard2) { deletedCard2.style.display = "block" }
-  if (deletedCard3) { deletedCard3.style.display = "block" }
-  if (deletedCard4) { deletedCard4.style.display = "block" }
-  if (deletedCard5) { deletedCard5.style.display = "block" }
-  if (deletedCard6) { deletedCard6.style.display = "block" }
-  if (deletedCard7) { deletedCard7.style.display = "block" }
-  if (deletedCard8) { deletedCard8.style.display = "block" }
+  if (deletedCard1) { deletedCard1.dataset.deleted = "false" }
+  if (deletedCard2) { deletedCard2.dataset.deleted = "false" }
+  if (deletedCard3) { deletedCard3.dataset.deleted = "false" }
+  if (deletedCard4) { deletedCard4.dataset.deleted = "false" }
+  if (deletedCard5) { deletedCard5.dataset.deleted = "false" }
+  if (deletedCard6) { deletedCard6.dataset.deleted = "false" }
+  if (deletedCard7) { deletedCard7.dataset.deleted = "false" }
+  if (deletedCard8) { deletedCard8.dataset.deleted = "false" }
 
   updateCounts()
   applyFilter()
