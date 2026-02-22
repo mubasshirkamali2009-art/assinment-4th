@@ -11,9 +11,8 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <style>
         * {
             font-family: "Work Sans", sans-serif;
@@ -22,245 +21,194 @@
 </head>
 
 <body class="bg-base-200 mx-auto flex flex-col items-center w-full">
-    
-    <header class="flex items-start ">
-        <h1 class="text-primary font-bold sm:text-xl  text-center  md:text-2xl 
-        lg:text-2xl my-15">Job Application Tracker</h1>
+
+    <header class="flex items-start">
+        <h1 class="text-primary font-bold sm:text-xl text-center md:text-2xl lg:text-2xl my-15">Job Application Tracker</h1>
     </header>
-    <section  id=""  >
-        <div class="grid sm:grid-cols-1  md:grid-cols-3  lg:grid-cols-3 mx-auto gap-5 container  ">
-            <div id="totalbtn" class="bg-[#e6e6e6] rounded-md  flex-col  py-3 px-4
-    items-start text-left sm:w-full  md:w-[130px] 
-    lg:w-[360px] ">
+
+    <section>
+        <div class="grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 mx-auto gap-5 container">
+            <div class="bg-[#e6e6e6] rounded-md flex-col py-3 px-4 items-start text-left sm:w-full md:w-[130px] lg:w-[360px]">
                 <p>Total</p>
-                <h1 id="Total-count-btn" class="text-2xl text-neutral  ">8</h1>
+                <h1 id="Total-count-btn" class="text-2xl text-neutral">8</h1>
             </div>
-            <div id="" class="bg-[#e6e6e6] rounded-md  flex-col w-[360px] py-3 px-4
-    items-start text-left  sm:w-full  md:w-[130px] 
-    lg:w-[360px]" >
+            <div class="bg-[#e6e6e6] rounded-md flex-col py-3 px-4 items-start text-left sm:w-full md:w-[130px] lg:w-[360px]">
                 <p>Interview</p>
-                <h1 id="interview-count-btn" class="text-2xl text-success  ">0</h1>
+                <h1 id="interview-count-btn" class="text-2xl text-success">0</h1>
             </div>
-            <div id=" " class="bg-[#e6e6e6] rounded-md  flex-col w-[360px] py-3 px-4
-    items-start text-left   sm:w-full  md:w-[130px] 
-    lg:w-[360px]">
+            <div class="bg-[#e6e6e6] rounded-md flex-col py-3 px-4 items-start text-left sm:w-full md:w-[130px] lg:w-[360px]">
                 <p>Rejected</p>
-                <h1 id="rejected-count-btn" class="text-2xl text-error  ">0</h1>
+                <h1 id="rejected-count-btn" class="text-2xl text-error">0</h1>
             </div>
         </div>
     </section>
-    <section id="all-section" class=" border-t-2 border-gray-200  mt-25  ">
-        <div class="flex justify-between items-center    border-red-500 w-[90%]">
-            <h1 class="   border-red-500 text-neutral font-bold text-xl text-left my-15 sm:ml-2 md:ml-10 lg:15"> Available Jobs</h1>
-            <h3 id="jobs-count" class="  border-red-500">8 Jobs</h3>
+
+    <section id="all-section" class="border-t-2 border-gray-200 mt-25 w-full flex flex-col items-center">
+        <div class="flex justify-between items-center w-[90%]">
+            <h1 class="text-neutral font-bold text-xl text-left my-15">Available Jobs</h1>
+            <h3 id="jobs-count">8 Jobs</h3>
         </div>
-        <div class="grid grid-cols-3 gap-5 sm:ml-2 md:ml-10 lg:15">
-            <button id="all-btn" class="btn   btn-soft 
-            sm:px-1   md:px-10  lg:px-10
-          ">All</button>
-            <button id="interview-page-btn" class="btn   btn-soft  sm:px-1   md:px-10  lg:px-10">interview</button>
-            <button id="rejected-page-btn" class="btn   btn-soft  sm:px-1   md:px-10  lg:px-10">Rejected</button>
+        <div class="grid grid-cols-3 gap-5 w-[90%]">
+            <button id="all-btn" class="btn btn-soft">All</button>
+            <button id="interview-page-btn" class="btn btn-soft">interview</button>
+            <button id="rejected-page-btn" class="btn btn-soft">Rejected</button>
         </div>
-        <div data-id="1" data-status="pending" class="
-        job-card  w-[90%] bg-white rounded-lg  p-5 mt-7  sm:ml-5 md:ml-10 lg:ml-15  sm:mx-auto">
+
+  
+        <div data-id="1" data-status="pending" class="job-card w-[90%] bg-white rounded-lg p-5 mt-7 mx-auto">
             <h2 class="font-bold">Mobail frist crop</h2>
             <p class="text-gray-500">React Native Developer</p>
             <br>
-            <p class="text-gray-500">Remote
-                •
-                Full-time
-                •
-                $130,000 - $175,000</p>
+            <p class="text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
             <br>
-            <button disabled id="stetus-1" class="btn  btn-soft cursor-not-allowed text-black font-semibold">NOT
-                APPLIED </button>
-            <p class="text-gray-500  font-bold">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
+            <button disabled id="stetus-1" class="btn btn-soft cursor-not-allowed text-black font-semibold">NOT APPLIED</button>
+            <p class="text-gray-500 font-bold">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <br>
-
             <div>
-                <button id="interview-stetus-btn-1"
-                    class="btn btn-accent bg-white border-3  text-success">interview</button>
-                <button id="rejected-stetus-btn-1" class="btn btn-error bg-white border-3  text-error">Rejected</button>
-
+                <button id="interview-stetus-btn-1" class="btn btn-accent bg-white border-3 text-success">interview</button>
+                <button id="rejected-stetus-btn-1" class="btn btn-error bg-white border-3 text-error">Rejected</button>
+                <button id="delete-btn-1" class="btn btn-sm btn-error bg-white border-3 text-error"><i class="fa-solid fa-trash"></i> Delete</button>
             </div>
         </div>
-        <div data-id="2" data-status="pending" class="
-        job-card  w-[90%] bg-white rounded-lg  p-5 mt-7  sm:ml-5 md:ml-10 lg:ml-15  sm:mx-auto">
+
+        <div data-id="2" data-status="pending" class="job-card w-[90%] bg-white rounded-lg p-5 mt-7 mx-auto">
             <h2 class="font-bold">Mobail frist crop</h2>
             <p class="text-gray-500">React Native Developer</p>
             <br>
-            <p class="text-gray-500">Remote
-                •
-                Full-time
-                •
-                $130,000 - $175,000</p>
+            <p class="text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
             <br>
-            <button disabled id="stetus-2" class="btn  btn-soft cursor-not-allowed text-black font-semibold">NOT
-                APPLIED </button>
-            <p class="text-gray-500  font-bold">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
+            <button disabled id="stetus-2" class="btn btn-soft cursor-not-allowed text-black font-semibold">NOT APPLIED</button>
+            <p class="text-gray-500 font-bold">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <br>
-
             <div>
-                <button id="interview-stetus-btn-2"
-                    class="btn btn-accent bg-white border-3  text-success">interview</button>
-                <button id="rejected-stetus-btn-2" class="btn btn-error bg-white border-3  text-error">Rejected</button>
-
+                <button id="interview-stetus-btn-2" class="btn btn-accent bg-white border-3 text-success">interview</button>
+                <button id="rejected-stetus-btn-2" class="btn btn-error bg-white border-3 text-error">Rejected</button>
+                <button id="delete-btn-2" class="btn btn-sm btn-error bg-white border-3 text-error"><i class="fa-solid fa-trash"></i> Delete</button>
             </div>
         </div>
-        <div data-id="3" data-status="pending" class="
-        job-card  w-[90%] bg-white rounded-lg  p-5 mt-7  sm:ml-5 md:ml-10 lg:ml-15  sm:mx-auto">
+
+       
+        <div data-id="3" data-status="pending" class="job-card w-[90%] bg-white rounded-lg p-5 mt-7 mx-auto">
             <h2 class="font-bold">Mobail frist crop</h2>
             <p class="text-gray-500">React Native Developer</p>
             <br>
-            <p class="text-gray-500">Remote
-                •
-                Full-time
-                •
-                $130,000 - $175,000</p>
+            <p class="text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
             <br>
-            <button disabled id="stetus-3" class="btn  btn-soft cursor-not-allowed text-black font-semibold">NOT
-                APPLIED </button>
-            <p class="text-gray-500  font-bold">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
+            <button disabled id="stetus-3" class="btn btn-soft cursor-not-allowed text-black font-semibold">NOT APPLIED</button>
+            <p class="text-gray-500 font-bold">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <br>
-
             <div>
-                <button id="interview-stetus-btn-3"
-                    class="btn btn-accent bg-white border-3  text-success">interview</button>
-                <button id="rejected-stetus-btn-3" class="btn btn-error bg-white border-3  text-error">Rejected</button>
-
+                <button id="interview-stetus-btn-3" class="btn btn-accent bg-white border-3 text-success">interview</button>
+                <button id="rejected-stetus-btn-3" class="btn btn-error bg-white border-3 text-error">Rejected</button>
+                <button id="delete-btn-3" class="btn btn-sm btn-error bg-white border-3 text-error"><i class="fa-solid fa-trash"></i> Delete</button>
             </div>
         </div>
-        <div data-id="4" data-status="pending" class="
-        job-card  w-[90%] bg-white rounded-lg  p-5 mt-7  sm:ml-5 md:ml-10 lg:ml-15  sm:mx-auto">
+
+     
+        <div data-id="4" data-status="pending" class="job-card w-[90%] bg-white rounded-lg p-5 mt-7 mx-auto">
             <h2 class="font-bold">Mobail frist crop</h2>
             <p class="text-gray-500">React Native Developer</p>
             <br>
-            <p class="text-gray-500">Remote
-                •
-                Full-time
-                •
-                $130,000 - $175,000</p>
+            <p class="text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
             <br>
-            <button disabled id="stetus-4" class="btn  btn-soft cursor-not-allowed text-black font-semibold">NOT
-                APPLIED </button>
-            <p class="text-gray-500  font-bold">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
+            <button disabled id="stetus-4" class="btn btn-soft cursor-not-allowed text-black font-semibold">NOT APPLIED</button>
+            <p class="text-gray-500 font-bold">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <br>
-
             <div>
-                <button id="interview-stetus-btn-4"
-                    class="btn btn-accent bg-white border-3  text-success">interview</button>
-                <button id="rejected-stetus-btn-4" class="btn btn-error bg-white border-3  text-error">Rejected</button>
-
+                <button id="interview-stetus-btn-4" class="btn btn-accent bg-white border-3 text-success">interview</button>
+                <button id="rejected-stetus-btn-4" class="btn btn-error bg-white border-3 text-error">Rejected</button>
+                <button id="delete-btn-4" class="btn btn-sm btn-error bg-white border-3 text-error"><i class="fa-solid fa-trash"></i> Delete</button>
             </div>
         </div>
-        <div data-id="5" data-status="pending" class="
-        job-card  w-[90%] bg-white rounded-lg  p-5 mt-7  sm:ml-5 md:ml-10 lg:ml-15  sm:mx-auto">
+
+
+        <div data-id="5" data-status="pending" class="job-card w-[90%] bg-white rounded-lg p-5 mt-7 mx-auto">
             <h2 class="font-bold">Mobail frist crop</h2>
             <p class="text-gray-500">React Native Developer</p>
             <br>
-            <p class="text-gray-500">Remote
-                •
-                Full-time
-                •
-                $130,000 - $175,000</p>
+            <p class="text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
             <br>
-            <button disabled id="stetus-5" class="btn  btn-soft cursor-not-allowed text-black font-semibold">NOT
-                APPLIED </button>
-            <p class="text-gray-500  font-bold">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
+            <button disabled id="stetus-5" class="btn btn-soft cursor-not-allowed text-black font-semibold">NOT APPLIED</button>
+            <p class="text-gray-500 font-bold">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <br>
-
             <div>
-                <button id="interview-stetus-btn-5"
-                    class="btn btn-accent bg-white border-3  text-success">interview</button>
-                <button id="rejected-stetus-btn-5" class="btn btn-error bg-white border-3  text-error">Rejected</button>
-
+                <button id="interview-stetus-btn-5" class="btn btn-accent bg-white border-3 text-success">interview</button>
+                <button id="rejected-stetus-btn-5" class="btn btn-error bg-white border-3 text-error">Rejected</button>
+                <button id="delete-btn-5" class="btn btn-sm btn-error bg-white border-3 text-error"><i class="fa-solid fa-trash"></i> Delete</button>
             </div>
         </div>
-        <div data-id="6" data-status="pending" class="
-        job-card  w-[90%] bg-white rounded-lg  p-5 mt-7  sm:ml-5 md:ml-10 lg:ml-15  sm:mx-auto">
+
+
+        <div data-id="6" data-status="pending" class="job-card w-[90%] bg-white rounded-lg p-5 mt-7 mx-auto">
             <h2 class="font-bold">Mobail frist crop</h2>
             <p class="text-gray-500">React Native Developer</p>
             <br>
-            <p class="text-gray-500">Remote
-                •
-                Full-time
-                •
-                $130,000 - $175,000</p>
+            <p class="text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
             <br>
-            <button disabled id="stetus-6" class="btn  btn-soft cursor-not-allowed text-black font-semibold">NOT
-                APPLIED </button>
-            <p class="text-gray-500  font-bold">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
+            <button disabled id="stetus-6" class="btn btn-soft cursor-not-allowed text-black font-semibold">NOT APPLIED</button>
+            <p class="text-gray-500 font-bold">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <br>
-
             <div>
-                <button id="interview-stetus-btn-6"
-                    class="btn btn-accent bg-white border-3  text-success">interview</button>
-                <button id="rejected-stetus-btn-6" class="btn btn-error bg-white border-3  text-error">Rejected</button>
-
+                <button id="interview-stetus-btn-6" class="btn btn-accent bg-white border-3 text-success">interview</button>
+                <button id="rejected-stetus-btn-6" class="btn btn-error bg-white border-3 text-error">Rejected</button>
+                <button id="delete-btn-6" class="btn btn-sm btn-error bg-white border-3 text-error"><i class="fa-solid fa-trash"></i> Delete</button>
             </div>
         </div>
-        <div data-id="7" data-status="pending" class="
-        job-card  w-[90%] bg-white rounded-lg  p-5 mt-7  sm:ml-5 md:ml-10 lg:ml-15  sm:mx-auto">
+
+      
+        <div data-id="7" data-status="pending" class="job-card w-[90%] bg-white rounded-lg p-5 mt-7 mx-auto">
             <h2 class="font-bold">Mobail frist crop</h2>
             <p class="text-gray-500">React Native Developer</p>
             <br>
-            <p class="text-gray-500">Remote
-                •
-                Full-time
-                •
-                $130,000 - $175,000</p>
+            <p class="text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
             <br>
-            <button disabled id="stetus-7" class="btn  btn-soft cursor-not-allowed text-black font-semibold">NOT
-                APPLIED </button>
-            <p class="text-gray-500  font-bold">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
+            <button disabled id="stetus-7" class="btn btn-soft cursor-not-allowed text-black font-semibold">NOT APPLIED</button>
+            <p class="text-gray-500 font-bold">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <br>
-
             <div>
-                <button id="interview-stetus-btn-7"
-                    class="btn btn-accent bg-white border-3  text-success">interview</button>
-                <button id="rejected-stetus-btn-7" class="btn btn-error bg-white border-3  text-error">Rejected</button>
-
+                <button id="interview-stetus-btn-7" class="btn btn-accent bg-white border-3 text-success">interview</button>
+                <button id="rejected-stetus-btn-7" class="btn btn-error bg-white border-3 text-error">Rejected</button>
+                <button id="delete-btn-7" class="btn btn-sm btn-error bg-white border-3 text-error"><i class="fa-solid fa-trash"></i> Delete</button>
             </div>
         </div>
-        <div data-id="8" data-status="pending" class="
-        job-card  w-[90%] bg-white rounded-lg  p-5 mt-7  sm:ml-5 md:ml-10 lg:ml-15  sm:mx-auto">
+
+  
+        <div data-id="8" data-status="pending" class="job-card w-[90%] bg-white rounded-lg p-5 mt-7 mx-auto">
             <h2 class="font-bold">Mobail frist crop</h2>
             <p class="text-gray-500">React Native Developer</p>
             <br>
-            <p class="text-gray-500">Remote
-                •
-                Full-time
-                •
-                $130,000 - $175,000</p>
+            <p class="text-gray-500">Remote • Full-time • $130,000 - $175,000</p>
             <br>
-            <button disabled id="stetus-8" class="btn  btn-soft cursor-not-allowed text-black font-semibold">NOT
-                APPLIED </button>
-            <p class="text-gray-500  font-bold">Build cross-platform mobile applications using React Native. Work on
-                products used by millions of users worldwide.</p>
+            <button disabled id="stetus-8" class="btn btn-soft cursor-not-allowed text-black font-semibold">NOT APPLIED</button>
+            <p class="text-gray-500 font-bold">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
             <br>
-
             <div>
-                <button id="interview-stetus-btn-8"
-                    class="btn btn-accent bg-white border-3  text-success">interview</button>
-                <button id="rejected-stetus-btn-8" class="btn btn-error bg-white border-3  text-error">Rejected</button>
-
+                <button id="interview-stetus-btn-8" class="btn btn-accent bg-white border-3 text-success">interview</button>
+                <button id="rejected-stetus-btn-8" class="btn btn-error bg-white border-3 text-error">Rejected</button>
+                <button id="delete-btn-8" class="btn btn-sm btn-error bg-white border-3 text-error"><i class="fa-solid fa-trash"></i> Delete</button>
             </div>
         </div>
+
     </section>
-    <section id="no-job-abailable" class="w-[90%]  bg-white flex flex-col  items-center mt-25 py-30 hidden">
+
+    <section id="no-job-abailable" class="w-[90%] bg-white flex flex-col items-center mt-25 py-30 hidden">
         <img class="w-[100px]" src="./jobs.png" alt="">
-        <h1>No jobs  abailable</h1>
+        <h1>No jobs abailable</h1>
         <p class="text-gray-500">Check back soon for new job opportunities</p>
-
     </section>
-    <script src="script.js/fungtion.js"></script>
-</body>
 
+    <section class="gap-5 my-20">
+        <div class="grid grid-cols-2 gap-5">
+            <button id="delete-all-btn" class="btn btn-warning px-10 py-8">
+                <i class="fa-solid fa-trash"></i> Delete All
+            </button>
+            <button id="restore-all-btn" class="btn btn-success px-10 py-8">
+                <i class="fa-solid fa-rotate-right"></i> Restore All
+            </button>
+        </div>
+    </section>
+
+    <script src="script.js/fungtion.js"></script>
+
+</body>
 </html>
