@@ -56,6 +56,26 @@ it supports forEach() method directly
 }
 
 
-
-
+//2nd ans //
+const div = document.createElement("div");
+div.innerText = "Hello World";
+div.classList.add("box");
+const container = document.getElementById("container");
+container.append(div); // or prepend(), before(), after()
                
+               3no  ans
+
+               Event Bubbling is when an event starts on the target element and then propagates upward to its parent elements, all the way to document
+
+
+               4rth ans
+
+               Event Delegation is when a parent element handles events for its child elements using event bubbling, instead of attaching listeners to every child
+
+               yes its  useful
+
+               5no ans
+
+             preventDefault() prevents the browser's default behavior.
+
+stopPropagation() prevents the event from bubbling up to parent elements.
