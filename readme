@@ -1,0 +1,61 @@
+                  <!-- 1st  answer -->
+   
+   
+   all  about getElementById 
+{ it can selects in only one element
+ it retuns Element
+ its not live and  its also not uses css  selector}
+
+
+
+
+
+
+all about getElementByClassName{
+    it  can  selects   in multiple element
+    and  it return htmlcullection
+    and its live
+    and its not  uses  for css  selector as like getElementById
+}
+
+all about querySelector {
+
+it can selects only one element (first matching element)
+
+it returns Element
+
+it is not live
+
+it us CSS selector
+
+ # for id
+ . for class
+
+it can select by tag name (div, p, etc.)
+
+it can select by attribute (input[type="text"])
+}
+
+all about querySelectorAll {
+
+it can selects multiple elements
+
+it returns NodeList
+
+it is not live (static)
+
+it uses CSS selector
+
+we  use # for id
+
+we  use . for class
+
+it can select by tag, class, id, attribute
+
+it supports forEach() method directly
+}
+
+
+
+
+               
